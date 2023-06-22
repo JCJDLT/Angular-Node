@@ -5,6 +5,8 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { PrivateTasksComponent } from './components/private-tasks/private-tasks.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { CatalogueComponent } from './components/catalogue/catalogue.component';
+import { IndexComponent } from './components/index/index.component';
 import { AuthGuard } from './auth.guard';
 import { AuthGuard2 } from './prueba.guard';
 
@@ -30,6 +32,14 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'catalogue',
+    component: CatalogueComponent
+  },
+  {
+    path: 'index',
+    component: IndexComponent
   }
 ];
 

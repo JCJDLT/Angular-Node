@@ -1,0 +1,22 @@
+<div class="container">
+  <h1 class="text-center mb-4">Catálogo de Imágenes</h1>
+  <div class="portfolio-menu mt-2 mb-4 d-flex">
+    <button class="btn btn-primary btn-custom" [class.active]="filterCategory === ''" (click)="filterCategory = ''">Todas</button>
+    <button class="btn btn-primary btn-custom" (click)="filterCategory = 'Polygel'">Polygel</button>
+    <button class="btn btn-primary btn-custom" (click)="filterCategory = 'Acrilicas'">Acrílico</button>
+    <button class="btn btn-primary btn-custom" (click)="filterCategory = 'Press-On'">Press On</button>
+    <button class="btn btn-primary btn-custom" (click)="filterCategory = 'Semipermanente'">Semipermanente</button>
+    <button class="btn btn-primary btn-custom" (click)="filterCategory = 'Tradicional'">Tradicional</button>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4 mb-4" *ngFor="let image of filteredImages">
+      <div class="card">
+        <img class="card-img-top" [src]="image.url" [alt]="image.category">
+        <div class="card-body">
+          <p class="card-text">{{image.category}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

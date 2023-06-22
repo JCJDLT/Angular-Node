@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -16,8 +17,10 @@ export class SignupComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  signUp() {
-    this.authService.signUp(this.user)
+  signUp(form: NgForm) {
+    if (form.valid) {
+      // proceder con el envío del formulario
+      this.authService.signUp(this.user)
       .subscribe(
         res => {
           console.log(res);
@@ -26,5 +29,8 @@ export class SignupComponent {
         },
         err => console.log(err)
       )
+    }else{
+      form.control.markAllAsTouched();
+    }
   }
 }

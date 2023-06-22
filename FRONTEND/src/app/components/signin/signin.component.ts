@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-signin',
@@ -13,17 +14,30 @@ export class SigninComponent {
     password: ""
   }
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) { }
+  formSubmitted = false; // Nueva variable
+  emailEntered = false;  // Nueva variable
+  login = false;
 
-  signIn() {
-    this.authService.signIn(this.user)
-      .subscribe(
-        res => {
-          console.log(res);
-          localStorage.setItem('token', res.token)
-          this.router.navigate(["/private"])
-        },
-        err => console.log(err)
-      )
+  signIn(form: NgForm) {
+    this.formSubmitted = true;
+    if (this.user.email) {
+      this.emailEntered = true;
+    }
+    if (form.valid) {
+      this.authService.signIn(this.user)
+        .subscribe(
+          res => {
+            console.log(res);
+            localStorage.setItem('token', res.token)
+            this.router.navigate(["/private"])
+          },
+          err => {
+            console.log(err);
+            this.emailEntered = false;
+            this.login = true;
+          }
+        )
+    }
   }
 }

@@ -13,6 +13,8 @@ import { PrivateTasksComponent } from './components/private-tasks/private-tasks.
 import { AuthGuard } from './auth.guard';
 import { AuthGuard2 } from './prueba.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { CatalogueComponent } from './components/catalogue/catalogue.component';
+import { IndexComponent } from './components/index/index.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     SignupComponent,
     SigninComponent,
     TasksComponent,
-    PrivateTasksComponent
+    PrivateTasksComponent,
+    CatalogueComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,

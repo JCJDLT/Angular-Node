@@ -1,0 +1,19 @@
+.portfolio-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-custom {
+    margin: 0 10px;
+    width: 140px;
+    height: 40px;
+}
+
+.card {
+    transition: all 0.3s ease-out;
+}
+
+.card.ng-leave-active {
+    opacity: 0;
+}
