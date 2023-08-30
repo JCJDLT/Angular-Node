@@ -7,13 +7,15 @@ import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { IndexComponent } from './components/index/index.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
 import { AuthGuard } from './auth.guard';
 import { AuthGuard2 } from './prueba.guard';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/tasks',
+    redirectTo: '/profile',
     pathMatch: 'full'
   },
   {
@@ -40,6 +42,11 @@ const routes: Routes = [
   {
     path: 'index',
     component: IndexComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthGuard2]
   }
 ];
 

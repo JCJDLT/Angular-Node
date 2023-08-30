@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthGuard2 {
+  
   constructor(
     private authService: AuthService,
     private router: Router

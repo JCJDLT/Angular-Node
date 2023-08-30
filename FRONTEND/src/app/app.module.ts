@@ -15,6 +15,7 @@ import { AuthGuard2 } from './prueba.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { IndexComponent } from './components/index/index.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { IndexComponent } from './components/index/index.component';
     TasksComponent,
     PrivateTasksComponent,
     CatalogueComponent,
-    IndexComponent
+    IndexComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
